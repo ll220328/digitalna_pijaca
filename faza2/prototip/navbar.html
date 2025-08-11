@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ePijaca</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 1050;
+      }
+      .sidebar a,
+      .sidebar p {
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        color: #000;
+      }
+      .sidebar a:hover {
+        background-color: #ddd;
+      }
+      .sidebar .closebtn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light px-3">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://via.placeholder.com/40" alt="Logo" class="me-2" />
+        MyApp
+      </a>
+
+      <div class="d-none d-md-flex gap-3">
+        <a href="#" class="btn btn-outline-primary">Prijava</a>
+        <a href="#" class="btn btn-primary">Registracija</a>
+      </div>
+
+      <button
+        class="navbar-toggler d-md-none border-0"
+        type="button"
+        onclick="openSidebar()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >×</a
+      >
+      <p>Zdravo ${username}</p>
+      <a href="#">Prijava</a>
+      <a href="#">Registracija</a>
+      <a href="#">Postani domacin</a>
+      <a href="#">Moj izlog</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Odjavi se</a>
+    </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+      function closeSidebar() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
