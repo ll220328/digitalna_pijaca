@@ -11,6 +11,7 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
+    <!--U ovom prvom style tagu je samo css za navbar/sidebar i search-->
     <style>
       .sidebar {
         height: 100%;
@@ -86,22 +87,21 @@
         placeholder="Pretrazi domacine..."
       />
     </div>
+<!--ovaj style tag je za rezultate pretrage-->
     <style>
-  .domacin-card {
-    display: flex;
-    border-radius: 16px; /* zaobljene ivice */
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: background-color .15s ease;
-    margin-bottom: 16px;
-    height: 140px; /* fiksna visina */
-    overflow: hidden;
-  }
+    .domacin-card {
+        display: flex;
+        border-radius: 16px; 
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 5px 8px rgba(0,0,0,0.06);
+        margin-bottom: 18px;
+        height: 180px; 
+        cursor: pointer; 
+        text-decoration: none; /* nema podvlačenja kad bude <a> */
+        color: inherit; 
+    }
 
-  .domacin-card:hover {
-    background-color: #f1f3f5; /* posivi na hover */
-  }
 
   .domacin-slika {
     flex: 0 0 40%;
@@ -116,30 +116,36 @@
   .domacin-info {
     flex: 1;
     padding: 16px;
-    background-color: #DEE8CE; ;
+    background-color: #DEE8CE;
+    
+  }
+  .domacin-info:hover {
+      background-color: #f1f3f5; /* posivi na hover */
+
   }
 
   .domacin-info h3 {
     margin-top: 0;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
   }
 
   .domacin-info p {
     margin-bottom: 0;
     color: #495057;
     line-height: 1.4;
-    /
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
   }
     .btn-ucitaj-jos{
-    border: 1px solid #6c757d;
+    border: 3px solid #DEE8CE;
     border-radius: 999px;
     background: transparent;
     color: #6c757d;
     padding: 10px 22px;
-    transition: background-color .15s ease, color .15s ease;
-    cursor: default; /* za sada bez akcije */
   }
   .btn-ucitaj-jos:hover{
     background-color:#6c757d;
@@ -153,7 +159,7 @@
 <!-- DIV ZA DOMACINA -->
 <div class="rez_container my-3">
   <!-- (1/10) – tvoja postojeća kartica ostaje identična -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
@@ -163,92 +169,86 @@
         tempor ante id, fermentum lorem.
       </p>
     </div>
-  </div>
-
+  </a>
   <!-- (2/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-
+  </a>
   <!-- (3/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-
+  </a>
   <!-- (4/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-
+  </a>
   <!-- (5/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-
+  </a>
   <!-- (6/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-
+  </a>
   <!-- (7/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-
+  </a>
   <!-- (8/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-
+  </a>
   <!-- (9/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
+  </a>
 
   <!-- (10/10) -->
-  <div class="domacin-card">
+  <a href="izlog.html" class="domacin-card">
     <div class="domacin-slika">ovde ide slika</div>
     <div class="domacin-info">
       <h3>Ime domaćina</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-  </div>
-  <!--Ovo je dugme ucitaj jos-->
-    </div>
-        <div class="container text-center my-4">
-    <button class="btn-ucitaj-jos">Učitaj još</button>
+  </a>
+
+</div> 
+
+    <!--Ovo je dugme ucitaj jos-->  
+    <div class="container text-center my-4">
+        <button class="btn-ucitaj-jos">Učitaj još</button>
     </div>
 
 
