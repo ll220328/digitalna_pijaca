@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ePijaca</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 1050;
+      }
+      .sidebar a,
+      .sidebar p {
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        color: #000;
+      }
+      .sidebar a:hover {
+        background-color: #ddd;
+      }
+      .sidebar .closebtn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 24px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light px-3">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img
+          src="assets/LogoZaProjekatPSI.png"
+          alt="Logo"
+          class="me-2 img-thumbnail"
+          width="50"
+          height="50"
+        />
+        Digitalna pijaca
+      </a>
+
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        onclick="openSidebar()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >×</a
+      >
+      <p>Zdravo ${username}</p>
+      <a href="prijava.html">Prijava</a>
+      <a href="registracija.html">Registracija</a>
+      <a href="#">Postani domacin</a>
+      <a href="izlog.html">Moj izlog</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Odjavi se</a>
+    </div>
+    <!-- SEARCH -->
+    <div class="container my-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Pretrazi domacine..."
+      />
+    </div>
+    <style>
+  .domacin-card {
+    display: flex;
+    border-radius: 16px; /* zaobljene ivice */
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background-color .15s ease;
+    margin-bottom: 16px;
+    height: 140px; /* fiksna visina */
+    overflow: hidden;
+  }
+
+  .domacin-card:hover {
+    background-color: #f1f3f5; /* posivi na hover */
+  }
+
+  .domacin-slika {
+    flex: 0 0 40%;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    min-height: 140px;
+  }
+
+  .domacin-info {
+    flex: 1;
+    padding: 16px;
+    background-color: #DEE8CE; ;
+  }
+
+  .domacin-info h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+
+  .domacin-info p {
+    margin-bottom: 0;
+    color: #495057;
+    line-height: 1.4;
+    /
+    
+    
+  }
+    .btn-ucitaj-jos{
+    border: 1px solid #6c757d;
+    border-radius: 999px;
+    background: transparent;
+    color: #6c757d;
+    padding: 10px 22px;
+    transition: background-color .15s ease, color .15s ease;
+    cursor: default; /* za sada bez akcije */
+  }
+  .btn-ucitaj-jos:hover{
+    background-color:#6c757d;
+    color:#fff;
+  }
+  .rez_container{
+    max-width: 60%;
+    margin: 0 auto;
+  }
+</style>
+<!-- DIV ZA DOMACINA -->
+<div class="rez_container my-3">
+  <!-- (1/10) – tvoja postojeća kartica ostaje identična -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Praesent porta malesuada justo. Integer at quam posuere, 
+        tempor ante id, fermentum lorem.
+      </p>
+    </div>
+  </div>
+
+  <!-- (2/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (3/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (4/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (5/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (6/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (7/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (8/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (9/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <!-- (10/10) -->
+  <div class="domacin-card">
+    <div class="domacin-slika">ovde ide slika</div>
+    <div class="domacin-info">
+      <h3>Ime domaćina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+  <!--Ovo je dugme ucitaj jos-->
+    </div>
+        <div class="container text-center my-4">
+    <button class="btn-ucitaj-jos">Učitaj još</button>
+    </div>
+
+
+    <script>
+      function openSidebar() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+      function closeSidebar() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
