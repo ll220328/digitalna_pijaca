@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Izlog domaćina</title>
+        <link 
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+         rel="stylesheet" 
+         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+         crossorigin="anonymous">
+
+        <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
+         crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-light bg-light px-3">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="/assets/LogoZaProjekatPSI.png" alt="Logo" class="me-2 img-thumbnail"  width="50" height="50" />
+                Digitalna pijaca
+            </a>
+
+            <!-- Veliki ekrani -->
+            <div class="d-none d-md-flex gap-3">
+                <a href="prijava.html" class="btn btn-outline-primary">Prijava</a>
+                <a href="registracija.html" class="btn btn-primary">Registracija</a>
+            </div>
+
+            <button
+             class="navbar-toggler d-md-none border-0"
+             type="button"
+             onclick="openSidebar()"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <div class="container">
+            <div class="row">
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img
+                         src="/assets/korisnik.jpg"
+                         class="img-fluid img-thumbnail rounded-circle"
+                         alt="Korisnik"
+                        />
+                    </div>
+                    <div class="col-sm-9">
+                        <h1> Petar Petrovic</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h2>
+                            Ocena
+                        </h2>
+                    </div>
+                    <div class="col-sm-9">
+                        <h2>
+                            Kontakt
+                        </h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-4">
+
+                    <div class="card text-center">
+                        <img
+                         src="/assets/slika-paradajz.jpg"
+                         class="card-img-top"
+                         alt="Paradajz"
+                        />
+
+                    <div class="card-body p-2">
+
+                        <p class="card-text mb-0 fw-bold">Paradajz</p>
+
+                        <span class="badge rounded-pill bg-success">Dostupno</span>
+
+                        <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta malesuada justo. Integer at quam posuere, tempor ante id, fermentum lorem. In hac habitasse platea dictumst. Duis efficitur placerat elit, ut blandit nibh vestibulum sit amet. Sed non consectetur sem. Aliquam sit amet justo quis massa sagittis vulputate. Sed venenatis in arcu et dictum. Praesent metus velit, lobortis et mi non, luctus consectetur ligula. Mauris facilisis placerat vulputate. Integer a risus aliquam, ultrices elit sit amet, cursus ex. Ut vulputate leo at nibh efficitur rutrum. Donec dapibus laoreet ex ut vehicula. Sed convallis dolor et vestibulum ullamcorper.</p>
+                        
+                        <dl class="row">
+                            <dt class="col-sm-3">Kategorija</dt>
+                            <dd class="col-sm-9">Povrće</dd>
+
+                            <dt class="col-sm-3">Način uzgoja</dt>
+                            <dd class="col-sm-9">Neprskano</dd>
+
+                        </dl>
+
+                    </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+
+                    <div class="card text-center">
+                        <img
+                         src="/assets/slika-lubenica.jpg"
+                         class="card-img-top"
+                         alt="Lubenica"
+                        />
+
+                    <div class="card-body p-2">
+                        
+
+                        <p class="card-text mb-0 fw-bold">Lubenica</p>
+
+                        <span class="badge rounded-pill bg-success">Dostupno</span>
+
+                        <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta malesuada justo. Integer at quam posuere, tempor ante id, fermentum lorem. In hac habitasse platea dictumst. Duis efficitur placerat elit, ut blandit nibh vestibulum sit amet. Sed non consectetur sem. Aliquam sit amet justo quis massa sagittis vulputate. Sed venenatis in arcu et dictum. Praesent metus velit, lobortis et mi non, luctus consectetur ligula. Mauris facilisis placerat vulputate. Integer a risus aliquam, ultrices elit sit amet, cursus ex. Ut vulputate leo at nibh efficitur rutrum. Donec dapibus laoreet ex ut vehicula. Sed convallis dolor et vestibulum ullamcorper.</p>
+                        
+                        <dl class="row">
+                            <dt class="col-sm-3">Kategorija</dt>
+                            <dd class="col-sm-9">Voće</dd>
+
+                            <dt class="col-sm-3">Način uzgoja</dt>
+                            <dd class="col-sm-9">Neprskano</dd>
+
+                        </dl>
+
+
+                    </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+
+                    <div class="card text-center">
+                        <img
+                         src="/assets/slika-krompir.jpg"
+                         class="card-img-top"
+                         alt="Krompir"
+                        />
+
+                    <div class="card-body p-2">
+                       
+                        
+                        <p class="card-text mb-0 fw-bold">Krompir</p>
+
+                        <span class="badge rounded-pill bg-danger">Nedostupno</span>
+
+                        <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta malesuada justo. Integer at quam posuere, tempor ante id, fermentum lorem. In hac habitasse platea dictumst. Duis efficitur placerat elit, ut blandit nibh vestibulum sit amet. Sed non consectetur sem. Aliquam sit amet justo quis massa sagittis vulputate. Sed venenatis in arcu et dictum. Praesent metus velit, lobortis et mi non, luctus consectetur ligula. Mauris facilisis placerat vulputate. Integer a risus aliquam, ultrices elit sit amet, cursus ex. Ut vulputate leo at nibh efficitur rutrum. Donec dapibus laoreet ex ut vehicula. Sed convallis dolor et vestibulum ullamcorper.</p>
+                        
+                        <dl class="row">
+                            <dt class="col-sm-3">Kategorija</dt>
+                            <dd class="col-sm-9">Povrće</dd>
+
+                            <dt class="col-sm-3">Način uzgoja</dt>
+                            <dd class="col-sm-9">Prskano</dd>
+
+                        </dl>
+
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <figure class="text-center">
+                        <blockquote class="blockquote">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta malesuada justo. Integer at quam posuere, tempor ante id, fermentum lorem. In hac habitasse platea dictumst. Duis efficitur placerat elit, ut blandit nibh vestibulum sit amet. Sed non consectetur sem. Aliquam sit amet justo quis massa sagittis vulputate. Sed venenatis in arcu et dictum. Praesent metus velit, lobortis et mi non, luctus consectetur ligula. Mauris facilisis placerat vulputate. Integer a risus aliquam, ultrices elit sit amet, cursus ex. Ut vulputate leo at nibh efficitur rutrum. Donec dapibus laoreet ex ut vehicula. Sed convallis dolor et vestibulum ullamcorper.
+                        </blockquote>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <iframe
+                     width="600"
+                     height="450"
+                     style="border:0"
+                     loading="lazy"
+                     allowfullscreen
+                     referrerpolicy="no-referrer-when-downgrade"
+                     src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+                        &q=Elektrotehnicki fakultet, Beograd">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+        
+    </body>
+
+</html>
