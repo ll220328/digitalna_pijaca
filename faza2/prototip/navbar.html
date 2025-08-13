@@ -1,3 +1,5 @@
+<!-- Kristijan Kovacevic -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,13 +27,21 @@
         z-index: 1050;
       }
       .sidebar a,
-      .sidebar p {
+      .sidebar p,
+      .sidebar button {
         padding: 10px 20px;
         text-decoration: none;
         font-size: 18px;
         display: block;
         color: #000;
       }
+      .sidebar button {
+        border: none;
+        background: unset;
+        text-align: left;
+        width: 100%;
+      }
+      .sidebar button:hover,
       .sidebar a:hover {
         background-color: #ddd;
       }
@@ -72,10 +82,90 @@
       <p>Zdravo ${username}</p>
       <a href="prijava.html">Prijava</a>
       <a href="registracija.html">Registracija</a>
-      <a href="#">Postani domacin</a>
+      <button
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#zahtevModal"
+      >
+        Postani domacin
+      </button>
       <a href="izlog.html">Moj izlog</a>
       <a href="#">Dashboard</a>
-      <a href="#">Odjavi se</a>
+      <a href="prijava.html">Odjavi se</a>
+    </div>
+
+    <div
+      class="modal fade"
+      id="zahtevModal"
+      tabindex="-1"
+      aria-labelledby="zahtevModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Naslov -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="zahtevModalLabel">Pošalji zahtev</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Zatvori"
+            ></button>
+          </div>
+
+          <!-- Forma -->
+          <form id="zahtevForm">
+            <div class="modal-body">
+              <!-- Adresa -->
+              <div class="mb-3">
+                <label for="adresa" class="form-label">Adresa</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="adresa"
+                  name="adresa"
+                  required
+                />
+              </div>
+
+              <!-- Mesto -->
+              <div class="mb-3">
+                <label for="mesto" class="form-label">Mesto</label>
+                <select class="form-select" id="mesto" name="mesto" required>
+                  <option value="">Izaberi grad</option>
+                  <option>Beograd</option>
+                  <option>Novi Sad</option>
+                  <option>Niš</option>
+                  <option>Kragujevac</option>
+                  <option>Subotica</option>
+                  <option>Zrenjanin</option>
+                  <option>Pančevo</option>
+                </select>
+              </div>
+
+              <!-- Broj telefona -->
+              <div class="mb-3">
+                <label for="telefon" class="form-label">Broj telefona</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telefon"
+                  name="telefon"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Dugmad -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">
+                Pošalji zahtev
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
     <script>
