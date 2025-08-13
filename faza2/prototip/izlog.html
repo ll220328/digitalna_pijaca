@@ -76,7 +76,7 @@
       <a href="#">Postani domacin</a>
       <a href="izlog.html">Moj izlog</a>
       <a href="#">Dashboard</a>
-      <a href="#">Odjavi se</a>
+      <a href="prijava.html">Odjavi se</a>
     </div>
 
 
@@ -115,25 +115,26 @@
       </div>
 
       <div class="row m-2">
-        <div class="col-lg-4 col-sm-12">
+        <div class="col-lg-4 col-sm-12" id="kartica0">
           <div class="card text-center">
             <img
               src="assets/slika-paradajz.jpg"
               class="card-img-top"
               alt="Paradajz"
+              name="slikaProizvoda"
             />
              
             <div class="card-img-overlay">
-              <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalIzmeni">Izmeni</button> 
-              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalUklanjanje">X</button> 
+              <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalIzmeni" name="dugmeIzmeni" onclick="setIdIzmeni(0)">Izmeni</button> 
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalUklanjanje" name="dugmeUkloni" onclick="setId(0)">X</button> 
             </div>
 
             <div class="card-body p-2">
-              <p class="card-text mb-0 fw-bold">Paradajz</p>
+              <p class="card-text mb-0 fw-bold" name="imeProizvoda">Paradajz</p>
 
-              <span class="badge rounded-pill bg-success">Dostupno</span>
+              <span class="badge rounded-pill bg-success" name="dostupnostProizvoda">Dostupno</span>
 
-              <p class="card-text mb-0">
+              <p class="card-text mb-0" name="opisProizvoda">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Praesent porta malesuada justo. Integer at quam posuere, tempor
                 ante id, fermentum lorem. In hac habitasse platea dictumst. Duis
@@ -149,29 +150,35 @@
 
               <dl class="row">
                 <dt class="col-sm-3">Kategorija</dt>
-                <dd class="col-sm-9">Povrće</dd>
+                <dd class="col-sm-9" name="kategorijaProizvoda">Povrće</dd>
 
                 <dt class="col-sm-3">Način uzgoja</dt>
-                <dd class="col-sm-9">Neprskano</dd>
+                <dd class="col-sm-9" name="nacinUzgojaProizvoda">Neprskano</dd>
               </dl>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4 col-sm-12">
+        <div class="col-lg-4 col-sm-12" id="kartica1">
           <div class="card text-center">
             <img
               src="assets/slika-lubenica.jpg"
               class="card-img-top"
               alt="Lubenica"
+              name="slikaProizvoda"
             />
 
+            <div class="card-img-overlay">
+              <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalIzmeni" name="dugmeIzmeni" onclick="setIdIzmeni(1)">Izmeni</button> 
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalUklanjanje" name="dugmeUkloni" onclick="setId(1)">X</button> 
+            </div>
+
             <div class="card-body p-2">
-              <p class="card-text mb-0 fw-bold">Lubenica</p>
+              <p class="card-text mb-0 fw-bold" name="imeProizvoda">Lubenica</p>
 
-              <span class="badge rounded-pill bg-success">Dostupno</span>
+              <span class="badge rounded-pill bg-success" name="dostupnostProizvoda">Dostupno</span>
 
-              <p class="card-text mb-0">
+              <p class="card-text mb-0" name="opisProizvoda">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Praesent porta malesuada justo. Integer at quam posuere, tempor
                 ante id, fermentum lorem. In hac habitasse platea dictumst. Duis
@@ -187,29 +194,35 @@
 
               <dl class="row">
                 <dt class="col-sm-3">Kategorija</dt>
-                <dd class="col-sm-9">Voće</dd>
+                <dd class="col-sm-9" name="kategorijaProizvoda">Voće</dd>
 
                 <dt class="col-sm-3">Način uzgoja</dt>
-                <dd class="col-sm-9">Neprskano</dd>
+                <dd class="col-sm-9" name="nacinUzgojaProizvoda">Neprskano</dd>
               </dl>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4 col-sm-12">
+        <div class="col-lg-4 col-sm-12" id="kartica2">
           <div class="card text-center">
             <img
               src="assets/slika-krompir.jpg"
               class="card-img-top"
               alt="Krompir"
+              name="slikaProizvoda"
             />
 
+            <div class="card-img-overlay">
+              <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalIzmeni" name="dugmeIzmeni" onclick="setIdIzmeni(2)">Izmeni</button> 
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalUklanjanje" name="dugmeUkloni" onclick="setId(2)">X</button> 
+            </div>
+
             <div class="card-body p-2">
-              <p class="card-text mb-0 fw-bold">Krompir</p>
+              <p class="card-text mb-0 fw-bold" name="imeProizvoda">Krompir</p>
 
-              <span class="badge rounded-pill bg-danger">Nedostupno</span>
+              <span class="badge rounded-pill bg-danger" name="dostupnostProizvoda">Nedostupno</span>
 
-              <p class="card-text mb-0">
+              <p class="card-text mb-0" name="opisProizvoda">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Praesent porta malesuada justo. Integer at quam posuere, tempor
                 ante id, fermentum lorem. In hac habitasse platea dictumst. Duis
@@ -225,19 +238,19 @@
 
               <dl class="row">
                 <dt class="col-sm-3">Kategorija</dt>
-                <dd class="col-sm-9">Povrće</dd>
+                <dd class="col-sm-9" name="kategorijaProizvoda">Povrće</dd>
 
                 <dt class="col-sm-3">Način uzgoja</dt>
-                <dd class="col-sm-9">Prskano</dd>
+                <dd class="col-sm-9" name="nacinUzgojaProizvoda">Prskano</dd>
               </dl>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row m-3">
+      <div class="row m-3" id="redZaDodavanje">
 
-        <div class="col-lg-4 col-sm-12">
+        <div class="col-lg-4 col-sm-12" id="dodajDugme">
           <div class="card text-center">
 
               <button class="btn" data-bs-toggle="modal" data-bs-target="#modalDodaj">
@@ -300,18 +313,8 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-12">
-          <iframe
-            width="600"
-            height="450"
-            style="border: 0"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=API_KEY
-                        &q=Elektrotehnicki fakultet, Beograd"
-          >
-          </iframe>
+        <div class="col-sm-12 text-center p-3">
+          <img class="rounded img-thumbnail mx-auto d-block" src="assets/mapa.png">
         </div>
       </div>
     </div>
@@ -328,7 +331,7 @@
         </div>
 
           <div class="modal-body">
-            <form>
+            <form id="formDodaj">
 
               <label for="dodajKategorija">Kategorija</label>
               <select class="form-select" id="dodajKategorija">
@@ -361,7 +364,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-success">Dodaj proizvod</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="dodajProizvod()">Dodaj proizvod</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
           </div>
         </div>
@@ -381,41 +384,41 @@
 
           <div class="modal-body">
             
-            <form>
+            <form id="formIzmeni">
 
-              <label for="dodajKategorija">Kategorija</label>
-              <select class="form-select" id="dodajKategorija">
+              <label for="izmeniKategorija">Kategorija</label>
+              <select class="form-select" id="izmeniKategorija">
                 <option value="Voce">Voće</option>
                 <option value="Povrce">Povrće</option>
               </select>
               
-              <label for="dodajIme" class="form-label">Ime Proizvoda</label>
-              <input type="text" class="form-control" id="dodajIme" placeholder="npr. Jabuka Greni Smit">
+              <label for="izmeniIme" class="form-label">Ime Proizvoda</label>
+              <input type="text" class="form-control" id="izmeniIme" placeholder="npr. Jabuka Greni Smit">
 
-              <label for="dodajSlika">Slika</label>
-              <input type="file" class="form-control" id="dodajSlika" accept="image/png, image/jpeg" />
+              <label for="izmeniSlika">Slika</label>
+              <input type="file" class="form-control" id="izmeniSlika" accept="image/png, image/jpeg" />
               
-              <label for="dodajNacinUzgoja">Način Uzgoja</label>
-              <select class="form-select" id="dodajNacinUzgoja">
+              <label for="izmeniNacinUzgoja">Način Uzgoja</label>
+              <select class="form-select" id="izmeniNacinUzgoja">
                 <option value="Prskano">Prskano</option>
                 <option value="Neprskano">Neprskano</option>
               </select>
             
-              <label for="dodajDostupnost">Dostupnost</label>
-              <select class="form-select" id="dodajDostupnost">
+              <label for="izmeniDostupnost">Dostupnost</label>
+              <select class="form-select" id="izmeniDostupnost">
                 <option value="Dostupno">Dostupno</option>
                 <option value="Nedostupno">Nedostupno</option>
               </select>
 
-              <label for="dodajOpis" class="form-label">Opis Proizvoda</label>
-              <textarea class="form-control" id="dodajOpis" placeholder="npr. Lorem ipsum dolor sit amet, consectetur adipiscing elit." rows="4" cols="50"></textarea>
+              <label for="izmeniOpis" class="form-label">Opis Proizvoda</label>
+              <textarea class="form-control" id="izmeniOpis" placeholder="npr. Lorem ipsum dolor sit amet, consectetur adipiscing elit." rows="4" cols="50"></textarea>
               
             </form>
 
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Izmeni proizvod</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="izmeniProizvod()">Izmeni proizvod</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
           </div>
         </div>
@@ -436,7 +439,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Ukloni proizvod</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="ukloniProizvod()">Ukloni proizvod</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
           </div>
         </div>
@@ -504,6 +507,87 @@
       
     </script>
 
+    <script>
+      brKartica = 3;
+
+      id=0;
+
+      formIzmeni = document.getElementById("formIzmeni");
+
+      function setId(i)
+      {
+        id = i;
+      }
+
+      function setIdIzmeni(i)
+      {
+        setId(i);
+        formIzmeni.izmeniKategorija.value = document.getElementsByName("kategorijaProizvoda")[id].innerHTML;
+        formIzmeni.izmeniIme.value = document.getElementsByName("imeProizvoda")[id].innerHTML; 
+        //formIzmeni.izmeniSlika.value = "";
+        formIzmeni.izmeniNacinUzgoja.value = document.getElementsByName("nacinUzgojaProizvoda")[id].innerHTML;
+        formIzmeni.izmeniDostupnost.value = document.getElementsByName("dostupnostProizvoda")[id].innerHTML;
+        formIzmeni.izmeniOpis.value = document.getElementsByName("opisProizvoda")[id].innerHTML;
+        
+      }
+      function dodajProizvod()
+      {
+        e = document.getElementById("kartica"+(brKartica-1)).cloneNode(true);
+        e.style.display="block";
+        setId(brKartica);
+        e.id="kartica"+id;
+        brKartica++;
+        document.getElementById("redZaDodavanje").insertBefore(e, document.getElementById("dodajDugme"));
+
+        document.getElementsByName("kategorijaProizvoda")[id].innerHTML = formDodaj.dodajKategorija.value;
+        document.getElementsByName("imeProizvoda")[id].innerHTML = formDodaj.dodajIme.value;
+        //document.getElementsByName("slikaProizvoda")[id].src = formDodaj.dodajSlika.value;
+          document.getElementsByName("nacinUzgojaProizvoda")[id].innerHTML = formDodaj.dodajNacinUzgoja.value;
+          document.getElementsByName("dostupnostProizvoda")[id].innerHTML = formDodaj.dodajDostupnost.value;
+          if(formDodaj.dodajDostupnost.value == "Dostupno")
+          {
+            document.getElementsByName("dostupnostProizvoda")[id].classList.remove("bg-danger");
+            document.getElementsByName("dostupnostProizvoda")[id].classList.add("bg-success");
+          }
+          else
+          {
+            document.getElementsByName("dostupnostProizvoda")[id].classList.remove("bg-success");
+            document.getElementsByName("dostupnostProizvoda")[id].classList.add("bg-danger");
+          }
+          document.getElementsByName("opisProizvoda")[id].innerHTML = formDodaj.dodajOpis.value;
+
+          document.getElementsByName("dugmeIzmeni")[id].onclick="setIdIzmeni("+id+")";
+          document.getElementsByName("dugmeUkloni")[id].onclick="setId("+id+")";
+      }
+
+      function izmeniProizvod()
+      {
+          document.getElementsByName("kategorijaProizvoda")[id].innerHTML = formIzmeni.izmeniKategorija.value;
+          document.getElementsByName("imeProizvoda")[id].innerHTML = formIzmeni.izmeniIme.value;
+        //document.getElementsByName("slikaProizvoda")[id].src = formIzmeni.izmeniSlika.value;
+          document.getElementsByName("nacinUzgojaProizvoda")[id].innerHTML = formIzmeni.izmeniNacinUzgoja.value;
+          document.getElementsByName("dostupnostProizvoda")[id].innerHTML = formIzmeni.izmeniDostupnost.value;
+          if(formIzmeni.izmeniDostupnost.value == "Dostupno")
+          {
+            document.getElementsByName("dostupnostProizvoda")[id].classList.remove("bg-danger");
+            document.getElementsByName("dostupnostProizvoda")[id].classList.add("bg-success");
+          }
+          else
+          {
+            document.getElementsByName("dostupnostProizvoda")[id].classList.remove("bg-success");
+            document.getElementsByName("dostupnostProizvoda")[id].classList.add("bg-danger");
+          }
+          document.getElementsByName("opisProizvoda")[id].innerHTML = formIzmeni.izmeniOpis.value;
+
+      }
+
+
+      function ukloniProizvod()
+      {
+        document.getElementById("kartica"+id).style.display="none";
+      }
+
+    </script>
 
   </body>
 </html>
