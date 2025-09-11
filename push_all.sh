@@ -12,8 +12,8 @@ fi
 BRANCH="master"
 
 # Remote repozitorijumi (NE MENJATI)
-GH_REMOTE="https://github.com/${GH_USER}/digitalna_pijaca.git"
-GERRIT_REMOTE="ssh://${GERRIT_USER}@crete.etf.bg.ac.rs:29418/project_GreenNode"
+GH_REMOTE="git@github.com:ll220328/digitalna_pijaca.git"
+GERRIT_REMOTE="ssh://kk220656d@student.etf.bg.ac.rs:29418/project_GreenNode"
 
 # Push na GitHub
 echo "Pushing na GitHub kao $GH_USER na branch $BRANCH ..."
@@ -21,7 +21,7 @@ git push "$GH_REMOTE" "$BRANCH"
 
 # Push na Gerrit
 echo "Pushing na Gerrit kao $GERRIT_USER na branch $BRANCH ..."
-git push "$GERRIT_REMOTE" "$BRANCH"
+git push "$GERRIT_REMOTE" "$BRANCH" HEAD:refs/for/master
 
 echo "Završeno!"
 
