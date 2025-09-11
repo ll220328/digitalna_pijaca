@@ -1,0 +1,11 @@
+# ================================
+# KONFIGURACIJA ZA KORISNIKA
+# (prekopiraj ovaj fajl u config.sh
+# i unesi svoje podatke)
+# ================================
+
+# GitHub korisničko ime
+GH_USER="tvoj_github_username" # kristijan10
+
+# Gerrit korisničko ime (email ili indeks)
+GERRIT_USER="tvoj_gerrit_username" # kk220656d@student.etf.bg.ac.rs
