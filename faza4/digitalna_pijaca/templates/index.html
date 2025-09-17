@@ -1,0 +1,131 @@
+{#Kristijan Kovacevic 656/22#}
+{% extends 'master.html' %}
+{% load bootstrap_icons %}
+{% load static %}
+
+{% block title %}ePijaca{% endblock %}
+
+{% block content %}
+    <!-- SEARCH -->
+    <div class="container my-3">
+        <form method="post" class="d-flex">
+            <div class="input-group">
+                <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Pretrazi domacine..."
+                        name="q"
+                />
+                <button class="btn btn-outline-secondary" type="submit">
+                    {% bs_icon 'search' %}
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- OBAVESTENJA -->
+    <div class="container mb-3">
+        <div class="alert alert-info text-center mb-0" role="alert">
+            Ovo je obavestenje ili baner
+        </div>
+    </div>
+
+    {# TODO: komunikacija sa bazom #}
+    <!-- KATEGORIJE -->
+    <div id="accordionKategorije">
+        <div class="container mb-4">
+            <button
+                    class="btn btn-primary w-100 py-3 text-start mb-3 d-flex justify-content-between align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#voceCollapse"
+                    aria-expanded="false"
+                    aria-controls="voceCollapse"
+            >
+                Voce
+                <span class="collapse-icon">&uarr;</span>
+            </button>
+
+            <div
+                    class="collapse"
+                    id="voceCollapse"
+                    data-bs-parent="#accordionKategorije"
+            >
+                <div class="row g-3">
+                    <!-- Kartice -->
+                    <div class="col-6 col-md-3">
+                        <a href="#">
+                            <div class="card text-center">
+                                <img
+                                        src="{% static 'images/slika-paradajz.jpg' %}"
+                                        class="card-img-top"
+                                        alt="Paradajz"
+                                />
+                                <div class="card-body p-2">
+                                    <p class="card-text mb-0">Paradajz</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card text-center">
+                            <img
+                                    src="{% static 'images/slika-lubenica.jpg' %}"
+                                    class="card-img-top"
+                                    alt="Lubenica"
+                            />
+                            <div class="card-body p-2">
+                                <p class="card-text mb-0">Lubenica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mb-4">
+            <button
+                    class="btn btn-primary w-100 py-3 text-start mb-3 d-flex justify-content-between align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#povrceCollapse"
+                    aria-expanded="false"
+                    aria-controls="povrceCollapse"
+            >
+                Povrce
+                <span class="collapse-icon">&uarr;</span>
+            </button>
+
+            <div
+                    class="collapse"
+                    id="povrceCollapse"
+                    data-bs-parent="#accordionKategorije"
+            >
+                <div class="row g-3">
+                    <!-- Kartice -->
+                    <div class="col-6 col-md-3">
+                        <div class="card text-center">
+                            <img
+                                    src="{% static 'images/slika-krompir.jpg' %}"
+                                    class="card-img-top"
+                                    alt="Krompir"
+                            />
+                            <div class="card-body p-2">
+                                <p class="card-text mb-0">Krompir</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card text-center">
+                            <img src="{% static 'images/slika-paradajz.jpg' %}"
+                                 class="card-img-top" alt="Luk"/>
+                            <div class="card-body p-2">
+                                <p class="card-text mb-0">Luk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

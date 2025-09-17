@@ -1,0 +1,186 @@
+<!-- Kristijan Kovacevic -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ePijaca</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 1050;
+      }
+      .sidebar a,
+      .sidebar p,
+      .sidebar button {
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        color: #000;
+      }
+      .sidebar button {
+        border: none;
+        background: unset;
+        text-align: left;
+        width: 100%;
+      }
+      .sidebar button:hover,
+      .sidebar a:hover {
+        background-color: #ddd;
+      }
+      .sidebar .closebtn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light px-3">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img
+          src="assets/LogoZaProjekatPSI.png"
+          alt="Logo"
+          class="me-2 img-thumbnail"
+          width="50"
+          height="50"
+        />
+        Digitalna pijaca
+      </a>
+
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        onclick="openSidebar()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >×</a
+      >
+      <p>Zdravo ${username}</p>
+      <a href="prijava.html">Prijava</a>
+      <a href="registracija.html">Registracija</a>
+      <button
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#zahtevModal"
+      >
+        Postani domacin
+      </button>
+      <a href="izlog.html">Moj izlog</a>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="prijava.html">Odjavi se</a>
+    </div>
+
+    <div
+      class="modal fade"
+      id="zahtevModal"
+      tabindex="-1"
+      aria-labelledby="zahtevModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Naslov -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="zahtevModalLabel">Pošalji zahtev</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Zatvori"
+            ></button>
+          </div>
+
+          <!-- Forma -->
+          <form id="zahtevForm">
+            <div class="modal-body">
+              <!-- Adresa -->
+              <div class="mb-3">
+                <label for="adresa" class="form-label">Adresa</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="adresa"
+                  name="adresa"
+                  required
+                />
+              </div>
+
+              <!-- Mesto -->
+              <div class="mb-3">
+                <label for="mesto" class="form-label">Mesto</label>
+                <select class="form-select" id="mesto" name="mesto" required>
+                  <option value="">Izaberi grad</option>
+                  <option>Beograd</option>
+                  <option>Novi Sad</option>
+                  <option>Niš</option>
+                  <option>Kragujevac</option>
+                  <option>Subotica</option>
+                  <option>Zrenjanin</option>
+                  <option>Pančevo</option>
+                </select>
+              </div>
+
+              <!-- Broj telefona -->
+              <div class="mb-3">
+                <label for="telefon" class="form-label">Broj telefona</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telefon"
+                  name="telefon"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Dugmad -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">
+                Pošalji zahtev
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+      function closeSidebar() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

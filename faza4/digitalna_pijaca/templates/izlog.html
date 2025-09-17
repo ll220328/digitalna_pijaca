@@ -1,0 +1,849 @@
+<!--Autor: Luka Lazarević-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Izlog domaćina</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 1050;
+      }
+      .sidebar a,
+      .sidebar p,
+      .sidebar button {
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        color: #000;
+      }
+      .sidebar button {
+        border: none;
+        background: unset;
+        text-align: left;
+        width: 100%;
+      }
+      .sidebar button:hover,
+      .sidebar a:hover {
+        background-color: #ddd;
+      }
+      .sidebar .closebtn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+
+  <body onload="initDisplays()">
+    <nav class="navbar navbar-light bg-light px-3">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img
+          src="assets/LogoZaProjekatPSI.png"
+          alt="Logo"
+          class="me-2 img-thumbnail"
+          width="50"
+          height="50"
+        />
+        Digitalna pijaca
+      </a>
+
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        onclick="openSidebar()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >×</a
+      >
+      <p>Zdravo ${username}</p>
+      <a href="prijava.html">Prijava</a>
+      <a href="registracija.html">Registracija</a>
+      <button
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#zahtevModal"
+      >
+        Postani domacin
+      </button>
+      <a href="izlog.html">Moj izlog</a>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="prijava.html">Odjavi se</a>
+    </div>
+
+    <!-- MODAL -->
+    <div
+      class="modal fade"
+      id="zahtevModal"
+      tabindex="-1"
+      aria-labelledby="zahtevModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Naslov -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="zahtevModalLabel">Posalji zahtev</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Zatvori"
+            ></button>
+          </div>
+
+          <!-- Forma -->
+          <form id="zahtevForm">
+            <div class="modal-body">
+              <!-- Adresa -->
+              <div class="mb-3">
+                <label for="adresa" class="form-label">Adresa</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="adresa"
+                  name="adresa"
+                  required
+                />
+              </div>
+
+              <!-- Mesto -->
+              <div class="mb-3">
+                <label for="mesto" class="form-label">Mesto</label>
+                <select class="form-select" id="mesto" name="mesto" required>
+                  <option value="">Izaberi grad</option>
+                  <option>Beograd</option>
+                  <option>Novi Sad</option>
+                  <option>Nis</option>
+                  <option>Kragujevac</option>
+                  <option>Subotica</option>
+                  <option>Zrenjanin</option>
+                  <option>Pancevo</option>
+                </select>
+              </div>
+
+              <!-- Broj telefona -->
+              <div class="mb-3">
+                <label for="telefon" class="form-label">Broj telefona</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telefon"
+                  name="telefon"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Dugmad -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">
+                Posalji zahtev
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="vh-1000" style="background-color: #dee8ce">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card text-center m-4">
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col-sm-3 pt-3">
+                    <img
+                      src="assets/korisnik.jpg"
+                      class="img-fluid img-thumbnail rounded-circle"
+                      alt="Korisnik"
+                      width="150"
+                      height="150"
+                    />
+                  </div>
+                  <div class="col-sm-9 p-5">
+                    <h3>Petar Petrovic</h3>
+                    <p>Kontakt: +381 063 1234567</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-2">
+          <div class="col-lg-4 col-sm-12" id="kartica0">
+            <div class="card text-center">
+              <img
+                src="assets/slika-paradajz.jpg"
+                class="card-img-top"
+                alt="Paradajz"
+                name="slikaProizvoda"
+              />
+
+              <div class="card-img-overlay">
+                <button
+                  class="btn btn-outline-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalIzmeni"
+                  name="dugmeIzmeni"
+                  onclick="setIdIzmeni(0)"
+                >
+                  Izmeni
+                </button>
+                <button
+                  class="btn btn-outline-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalUklanjanje"
+                  name="dugmeUkloni"
+                  onclick="setId(0)"
+                >
+                  X
+                </button>
+              </div>
+
+              <div class="card-body p-2">
+                <p class="card-text mb-0 fw-bold" name="imeProizvoda">
+                  Paradajz
+                </p>
+
+                <span
+                  class="badge rounded-pill bg-success"
+                  name="dostupnostProizvoda"
+                  >Dostupno</span
+                >
+
+                <p class="card-text mb-0" name="opisProizvoda">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Praesent porta malesuada justo. Integer at quam posuere,
+                  tempor ante id, fermentum lorem. In hac habitasse platea
+                  dictumst. Duis efficitur placerat elit, ut blandit nibh
+                  vestibulum sit amet. Sed non consectetur sem. Aliquam sit amet
+                  justo quis massa sagittis vulputate. Sed venenatis in arcu et
+                  dictum. Praesent metus velit, lobortis et mi non, luctus
+                  consectetur ligula. Mauris facilisis placerat vulputate.
+                  Integer a risus aliquam, ultrices elit sit amet, cursus ex. Ut
+                  vulputate leo at nibh efficitur rutrum. Donec dapibus laoreet
+                  ex ut vehicula. Sed convallis dolor et vestibulum ullamcorper.
+                </p>
+
+                <dl class="row">
+                  <dt class="col-sm-3">Kategorija</dt>
+                  <dd class="col-sm-9" name="kategorijaProizvoda">Povrće</dd>
+
+                  <dt class="col-sm-3">Način uzgoja</dt>
+                  <dd class="col-sm-9" name="nacinUzgojaProizvoda">
+                    Neprskano
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-12" id="kartica1">
+            <div class="card text-center">
+              <img
+                src="assets/slika-lubenica.jpg"
+                class="card-img-top"
+                alt="Lubenica"
+                name="slikaProizvoda"
+              />
+
+              <div class="card-img-overlay">
+                <button
+                  class="btn btn-outline-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalIzmeni"
+                  name="dugmeIzmeni"
+                  onclick="setIdIzmeni(1)"
+                >
+                  Izmeni
+                </button>
+                <button
+                  class="btn btn-outline-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalUklanjanje"
+                  name="dugmeUkloni"
+                  onclick="setId(1)"
+                >
+                  X
+                </button>
+              </div>
+
+              <div class="card-body p-2">
+                <p class="card-text mb-0 fw-bold" name="imeProizvoda">
+                  Lubenica
+                </p>
+
+                <span
+                  class="badge rounded-pill bg-success"
+                  name="dostupnostProizvoda"
+                  >Dostupno</span
+                >
+
+                <p class="card-text mb-0" name="opisProizvoda">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Praesent porta malesuada justo. Integer at quam posuere,
+                  tempor ante id, fermentum lorem. In hac habitasse platea
+                  dictumst. Duis efficitur placerat elit, ut blandit nibh
+                  vestibulum sit amet. Sed non consectetur sem. Aliquam sit amet
+                  justo quis massa sagittis vulputate. Sed venenatis in arcu et
+                  dictum. Praesent metus velit, lobortis et mi non, luctus
+                  consectetur ligula. Mauris facilisis placerat vulputate.
+                  Integer a risus aliquam, ultrices elit sit amet, cursus ex. Ut
+                  vulputate leo at nibh efficitur rutrum. Donec dapibus laoreet
+                  ex ut vehicula. Sed convallis dolor et vestibulum ullamcorper.
+                </p>
+
+                <dl class="row">
+                  <dt class="col-sm-3">Kategorija</dt>
+                  <dd class="col-sm-9" name="kategorijaProizvoda">Voće</dd>
+
+                  <dt class="col-sm-3">Način uzgoja</dt>
+                  <dd class="col-sm-9" name="nacinUzgojaProizvoda">
+                    Neprskano
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-12" id="kartica2">
+            <div class="card text-center">
+              <img
+                src="assets/slika-krompir.jpg"
+                class="card-img-top"
+                alt="Krompir"
+                name="slikaProizvoda"
+              />
+
+              <div class="card-img-overlay">
+                <button
+                  class="btn btn-outline-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalIzmeni"
+                  name="dugmeIzmeni"
+                  onclick="setIdIzmeni(2)"
+                >
+                  Izmeni
+                </button>
+                <button
+                  class="btn btn-outline-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalUklanjanje"
+                  name="dugmeUkloni"
+                  onclick="setId(2)"
+                >
+                  X
+                </button>
+              </div>
+
+              <div class="card-body p-2">
+                <p class="card-text mb-0 fw-bold" name="imeProizvoda">
+                  Krompir
+                </p>
+
+                <span
+                  class="badge rounded-pill bg-danger"
+                  name="dostupnostProizvoda"
+                  >Nedostupno</span
+                >
+
+                <p class="card-text mb-0" name="opisProizvoda">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Praesent porta malesuada justo. Integer at quam posuere,
+                  tempor ante id, fermentum lorem. In hac habitasse platea
+                  dictumst. Duis efficitur placerat elit, ut blandit nibh
+                  vestibulum sit amet. Sed non consectetur sem. Aliquam sit amet
+                  justo quis massa sagittis vulputate. Sed venenatis in arcu et
+                  dictum. Praesent metus velit, lobortis et mi non, luctus
+                  consectetur ligula. Mauris facilisis placerat vulputate.
+                  Integer a risus aliquam, ultrices elit sit amet, cursus ex. Ut
+                  vulputate leo at nibh efficitur rutrum. Donec dapibus laoreet
+                  ex ut vehicula. Sed convallis dolor et vestibulum ullamcorper.
+                </p>
+
+                <dl class="row">
+                  <dt class="col-sm-3">Kategorija</dt>
+                  <dd class="col-sm-9" name="kategorijaProizvoda">Povrće</dd>
+
+                  <dt class="col-sm-3">Način uzgoja</dt>
+                  <dd class="col-sm-9" name="nacinUzgojaProizvoda">Prskano</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-3" id="redZaDodavanje">
+          <div class="col-lg-4 col-sm-12" id="dodajDugme">
+            <div class="card text-center">
+              <button
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDodaj"
+              >
+                <img
+                  src="assets/slika-dodaj.jpg"
+                  class="card-img-top"
+                  alt="Dodaj"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card text-center">
+              <div class="card-body p-4">
+                <div class="row">
+                  <div class="col-sm-12 p-2">
+                    <h5 class="card-title">Opis prodavca</h5>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12 p-2">
+                    <button
+                      class="btn btn-outline-secondary"
+                      id="opisIzmeniButton"
+                      onclick="showOpisTextBox()"
+                    >
+                      Izmeni opis
+                    </button>
+                    <button
+                      class="btn btn-outline-secondary"
+                      id="opisSacuvajButton"
+                      onclick="hideOpisTextBox()"
+                    >
+                      Sačuvaj opis
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <figure class="text-center p-3">
+                      <p class="blockquote" id="opisParagraph">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent porta malesuada justo. Integer at quam posuere,
+                        tempor ante id, fermentum lorem. In hac habitasse platea
+                        dictumst. Duis efficitur placerat elit, ut blandit nibh
+                        vestibulum sit amet. Sed non consectetur sem.
+                      </p>
+
+                      <textarea
+                        class="form-control"
+                        id="opisTextBox"
+                        placeholder="npr. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        rows="4"
+                        cols="50"
+                      ></textarea>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 text-center p-3">
+            <img
+              class="rounded img-thumbnail mx-auto d-block"
+              src="assets/mapa.png"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" id="modalDodaj">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dodavanje proizvoda</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="formDodaj">
+              <label for="dodajKategorija">Kategorija</label>
+              <select class="form-select" id="dodajKategorija">
+                <option value="Voce">Voće</option>
+                <option value="Povrce">Povrće</option>
+              </select>
+
+              <label for="dodajIme" class="form-label">Ime Proizvoda</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dodajIme"
+                placeholder="npr. Jabuka Greni Smit"
+              />
+
+              <label for="dodajSlika">Slika</label>
+              <input
+                type="file"
+                class="form-control"
+                id="dodajSlika"
+                accept="image/png, image/jpeg"
+              />
+
+              <label for="dodajNacinUzgoja">Način Uzgoja</label>
+              <select class="form-select" id="dodajNacinUzgoja">
+                <option value="Prskano">Prskano</option>
+                <option value="Neprskano">Neprskano</option>
+              </select>
+
+              <label for="dodajDostupnost">Dostupnost</label>
+              <select class="form-select" id="dodajDostupnost">
+                <option value="Dostupno">Dostupno</option>
+                <option value="Nedostupno">Nedostupno</option>
+              </select>
+
+              <label for="dodajOpis" class="form-label">Opis Proizvoda</label>
+              <textarea
+                class="form-control"
+                id="dodajOpis"
+                placeholder="npr. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                rows="4"
+                cols="50"
+              ></textarea>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+              onclick="dodajProizvod()"
+            >
+              Dodaj proizvod
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Odustani
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalIzmeni">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Izmena proizvoda</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="formIzmeni">
+              <label for="izmeniKategorija">Kategorija</label>
+              <select class="form-select" id="izmeniKategorija">
+                <option value="Voce">Voće</option>
+                <option value="Povrce">Povrće</option>
+              </select>
+
+              <label for="izmeniIme" class="form-label">Ime Proizvoda</label>
+              <input
+                type="text"
+                class="form-control"
+                id="izmeniIme"
+                placeholder="npr. Jabuka Greni Smit"
+              />
+
+              <label for="izmeniSlika">Slika</label>
+              <input
+                type="file"
+                class="form-control"
+                id="izmeniSlika"
+                accept="image/png, image/jpeg"
+              />
+
+              <label for="izmeniNacinUzgoja">Način Uzgoja</label>
+              <select class="form-select" id="izmeniNacinUzgoja">
+                <option value="Prskano">Prskano</option>
+                <option value="Neprskano">Neprskano</option>
+              </select>
+
+              <label for="izmeniDostupnost">Dostupnost</label>
+              <select class="form-select" id="izmeniDostupnost">
+                <option value="Dostupno">Dostupno</option>
+                <option value="Nedostupno">Nedostupno</option>
+              </select>
+
+              <label for="izmeniOpis" class="form-label">Opis Proizvoda</label>
+              <textarea
+                class="form-control"
+                id="izmeniOpis"
+                placeholder="npr. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                rows="4"
+                cols="50"
+              ></textarea>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              onclick="izmeniProizvod()"
+            >
+              Izmeni proizvod
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Odustani
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalUklanjanje">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Uklanjanje proizvoda</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p>Da li sigurno želite da uklonite proizvod?</p>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              onclick="ukloniProizvod()"
+            >
+              Ukloni proizvod
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Odustani
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+      function closeSidebar() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      defaultDisplayParagraph =
+        document.getElementById("opisParagraph").style.display;
+      defaultDisplayTextBox =
+        document.getElementById("opisTextBox").style.display;
+      defaultDisplayIzmeniButton =
+        document.getElementById("opisIzmeniButton").style.display;
+      defaultDisplaySacuvajButton =
+        document.getElementById("opisSacuvajButton").style.display;
+
+      paragraph = document.getElementById("opisParagraph");
+      textBox = document.getElementById("opisTextBox");
+      izmeniButton = document.getElementById("opisIzmeniButton");
+      sacuvajButton = document.getElementById("opisSacuvajButton");
+
+      function initDisplays() {
+        textBox.style.display = "none";
+        sacuvajButton.style.display = "none";
+      }
+
+      function showOpisTextBox() {
+        paragraph.style.display = "none";
+        textBox.style.display = defaultDisplayTextBox;
+
+        izmeniButton.style.display = "none";
+        sacuvajButton.style.display = defaultDisplaySacuvajButton;
+
+        textBox.value = paragraph.innerHTML;
+      }
+
+      function hideOpisTextBox() {
+        paragraph.style.display = defaultDisplayParagraph;
+
+        izmeniButton.style.display = defaultDisplayIzmeniButton;
+
+        initDisplays();
+
+        paragraph.innerHTML = textBox.value;
+      }
+    </script>
+
+    <script>
+      brKartica = 3;
+
+      id = 0;
+
+      formIzmeni = document.getElementById("formIzmeni");
+
+      function setId(i) {
+        id = i;
+      }
+
+      function setIdIzmeni(i) {
+        setId(i);
+        formIzmeni.izmeniKategorija.value = document.getElementsByName(
+          "kategorijaProizvoda"
+        )[id].innerHTML;
+        formIzmeni.izmeniIme.value =
+          document.getElementsByName("imeProizvoda")[id].innerHTML;
+        //formIzmeni.izmeniSlika.value = "";
+        formIzmeni.izmeniNacinUzgoja.value = document.getElementsByName(
+          "nacinUzgojaProizvoda"
+        )[id].innerHTML;
+        formIzmeni.izmeniDostupnost.value = document.getElementsByName(
+          "dostupnostProizvoda"
+        )[id].innerHTML;
+        formIzmeni.izmeniOpis.value =
+          document.getElementsByName("opisProizvoda")[id].innerHTML;
+      }
+      function dodajProizvod() {
+        e = document
+          .getElementById("kartica" + (brKartica - 1))
+          .cloneNode(true);
+        e.style.display = "block";
+        setId(brKartica);
+        e.id = "kartica" + id;
+        brKartica++;
+        document
+          .getElementById("redZaDodavanje")
+          .insertBefore(e, document.getElementById("dodajDugme"));
+
+        document.getElementsByName("kategorijaProizvoda")[id].innerHTML =
+          formDodaj.dodajKategorija.value;
+        document.getElementsByName("imeProizvoda")[id].innerHTML =
+          formDodaj.dodajIme.value;
+        //document.getElementsByName("slikaProizvoda")[id].src = formDodaj.dodajSlika.value;
+        document.getElementsByName("nacinUzgojaProizvoda")[id].innerHTML =
+          formDodaj.dodajNacinUzgoja.value;
+        document.getElementsByName("dostupnostProizvoda")[id].innerHTML =
+          formDodaj.dodajDostupnost.value;
+        if (formDodaj.dodajDostupnost.value == "Dostupno") {
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.remove("bg-danger");
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.add("bg-success");
+        } else {
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.remove("bg-success");
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.add("bg-danger");
+        }
+        document.getElementsByName("opisProizvoda")[id].innerHTML =
+          formDodaj.dodajOpis.value;
+
+        document.getElementsByName("dugmeIzmeni")[id].onclick =
+          "setIdIzmeni(" + id + ")";
+        document.getElementsByName("dugmeUkloni")[id].onclick =
+          "setId(" + id + ")";
+      }
+
+      function izmeniProizvod() {
+        document.getElementsByName("kategorijaProizvoda")[id].innerHTML =
+          formIzmeni.izmeniKategorija.value;
+        document.getElementsByName("imeProizvoda")[id].innerHTML =
+          formIzmeni.izmeniIme.value;
+        //document.getElementsByName("slikaProizvoda")[id].src = formIzmeni.izmeniSlika.value;
+        document.getElementsByName("nacinUzgojaProizvoda")[id].innerHTML =
+          formIzmeni.izmeniNacinUzgoja.value;
+        document.getElementsByName("dostupnostProizvoda")[id].innerHTML =
+          formIzmeni.izmeniDostupnost.value;
+        if (formIzmeni.izmeniDostupnost.value == "Dostupno") {
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.remove("bg-danger");
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.add("bg-success");
+        } else {
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.remove("bg-success");
+          document
+            .getElementsByName("dostupnostProizvoda")
+            [id].classList.add("bg-danger");
+        }
+        document.getElementsByName("opisProizvoda")[id].innerHTML =
+          formIzmeni.izmeniOpis.value;
+      }
+
+      function ukloniProizvod() {
+        document.getElementById("kartica" + id).style.display = "none";
+      }
+    </script>
+  </body>
+</html>
